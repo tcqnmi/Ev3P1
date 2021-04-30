@@ -22,28 +22,28 @@ class TestReloj {
 	void testAvanza() throws Exception {
 		Reloj r1 = new Reloj(12,25,30);
 		r1.avanza();
-		assertEquals(r1,"12,25,31");
+		assertEquals(r1.toString(),"Hora: 12:25:31");
 	}
 
 	@Test
 	void testRetrasa() throws Exception {
 		Reloj r1 = new Reloj(14,25,30);
 		r1.retrasa();
-		assertEquals(r1,"Hora: 14:25:29");
+		assertEquals(r1.toString(),"Hora: 14:25:29");
 	}
 
 	@Test
 	void testReset() throws Exception {
 		Reloj r1 = new Reloj(12,25,30);
 		r1.reset();
-		assertEquals(r1,"Hora: 00:00:00");
+		assertEquals(r1.toString(),"Hora: 00:00:00");
 	}
 
 	@Test
 	void testEnSegundos() throws Exception {
 		Reloj r1 = new Reloj(12,25,30);
 		
-		assertEquals(r1.enSegundos(), "2250");
+		assertEquals(r1.enSegundos(), 2970);
 	}
 
 	@Test
@@ -56,7 +56,7 @@ class TestReloj {
 	@Test
 	void testDoceHoras() throws Exception {
 		Reloj r1 = new Reloj(13,25,30);
-		assertEquals(r1.doceHoras(),"Hora: 01:25:30");
+		assertEquals(r1.doceHoras(),"Hora: 01:25:30 PM");
 	}
 
 }

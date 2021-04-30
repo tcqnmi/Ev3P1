@@ -115,7 +115,7 @@ public class Reloj {
 	}
 	
 	public double enSegundos() {
-		return horas/120+minutos/60+segundos;
+		return horas*120+minutos*60+segundos;
 	}
 	
 	public int compareTo(Reloj r) {
@@ -129,15 +129,14 @@ public class Reloj {
 	}
 	public String doceHoras() {
 		String mens= "";
-		int horasdoce= 0;
-		if(this.horas>12) {
-			this.horas-=12;
+		int horasdoce= this.horas;
+		if(this.horas>=12) {
+			horasdoce-=12;
 			mens="PM";
 		}else {
-			horasdoce = this.horas;
 			mens="AM";
 		}
-		return String.format("Hora: %2d:%2d:%2d %s",horasdoce,this.minutos,this.segundos, mens);
+		return String.format("Hora: %02d:%02d:%02d %s",horasdoce,this.minutos,this.segundos, mens);
 	}
 
 }
